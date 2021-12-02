@@ -109,7 +109,7 @@ const addChat = (req, res) => {
     })
     .then(users => {
         newChat.users = [...users.map(user => user._id), req.userId];
-        newChat.save();
+        return newChat.save();
     })
     .then(() => {
         return res.status(201).send({
@@ -119,6 +119,7 @@ const addChat = (req, res) => {
         });
     })
     .catch(err => {
+        console.log(err);
         return res.status(500).send({message: err.message});
     });
 }
