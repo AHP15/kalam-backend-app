@@ -22,10 +22,7 @@ APP.use(bodyParser.urlencoded({extended: true}));
 
 //connect to the database
 const Role = DB.role;
-DB.mongoose.connect(process.env.CONNECTION_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+DB.mongoose.connect(process.env.CONNECTION_URL)
 .then(() => {
     console.log("Connecting to the DB seccussfully!!");
     initial();
