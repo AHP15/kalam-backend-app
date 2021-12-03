@@ -11,7 +11,7 @@ dotenv.config();
 
 const APP = express();
 let corsOptions = {
-    origin:["https://kalam-a272c.web.app/","http://localhost:3000"],
+    origin:["https://admiring-heyrovsky-f50208.netlify.app/","http://localhost:3000"],
 };
 
 APP.use(cors(corsOptions));
